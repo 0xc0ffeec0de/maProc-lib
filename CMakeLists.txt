@@ -28,7 +28,7 @@ add_library(maProclib SHARED
 
         maProclib/filedescriptor.hpp
         maProclib/filedescriptor.cpp
-        
+
         maProclib/pmap.hpp
         maProclib/pmap.cpp
 
