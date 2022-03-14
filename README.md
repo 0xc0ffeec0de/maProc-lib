@@ -41,10 +41,12 @@ int main(void)
 
 	if(map.map_mem("heap")) // map heap process if true get infos
 	{
-		std::cout << "Name Process" << map.get_utilsPid(NAME); // get utils NAME process
+		std::cout << "Name Process" << map.get_utilsPid(NAME); // get utils name process
 		std::cout << "Pid :" << pid << std::endl; // pid target
-		std::cout << "Address start: 0x"<< std::hex << map.get_addrOn() << std::endl; // offset where the heap address begins
-		std::cout << "Address stop: 0x" << std::hex << map.get_addrOff() << std::endl; // offset end the heap address
+		// offset where the heap address begins
+		std::cout << "Address start: 0x"<< std::hex << map.get_addrOn() << std::endl; 
+		// offset end the heap address
+		std::cout << "Address stop: 0x" << std::hex << map.get_addrOff() << std::endl; 
 		std::cout << "Size Mem: " << map.get_sizeAddress() << std::endl; // size heap
 		std::cout << "Flags: " << map.get_Flags() << std::endl; // flags, permissions
 	}
