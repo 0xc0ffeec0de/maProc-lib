@@ -309,10 +309,20 @@ uint64_t Pmap::get_sizeAddress()
 }
 
 /**
- * @brief take the pid utility as an example, the name of the pid,
- * just pass it as a NAME parameter, which will return the process name
- *
+ * @brief take the pid utility as an example, the name of the pid
  * @param p_utils parameter used to get the pid information
+ * @details NAME get name process
+ * WCHAN get stats process
+ * SESSIONID get session user
+ * CMDLINE get how the process was started
+ * LOGINUID get login id
+ * SIZEBIN get size binary executable
+ * BLOCKSIZEBIN get in size block executable binary size
+ * EXEDIR return /proc/pid/exe
+ * HOSTNAME get host name machine
+ * VERSION get version kernel
+ * TYPE get type OS
+ *
  * @return std::string
  */
 std::string Pmap::get_utilsPid(uint8_t p_utils)
