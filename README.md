@@ -23,3 +23,33 @@ This lib is intended to map processes in *unix, this way you can get stack and h
 > Dependency
 
     build-essential
+
+# Example 📖
+
+A basic example of how to use the lib, and some features it brings
+
+```C++
+#include "maProclib/pmap.hpp"
+
+
+int main(void)
+{
+	Pmap map; // object for mapper
+
+	pid_t pid = 1; // pid target
+	map.map_pid(pid); // method to check and map the pid
+
+	if(map.map_mem("heap")) // map heap process if true get infos
+	{
+		std::cout << "Name Process" << map.get_utilsPid(NAME); // get utils NAME process
+		std::cout << "Pid :" << pid << std::endl; // pid target
+		std::cout << "Address start: 0x"<< std::hex << map.get_addrOn() << std::endl; // offset where the heap address begins
+		std::cout << "Address stop: 0x" << std::hex << map.get_addrOff() << std::endl; // offset end the heap address
+		std::cout << "Size Mem: " << map.get_sizeAddress() << std::endl; // size heap
+		std::cout << "Flags: " << map.get_Flags() << std::endl; // flags, permissions
+	}
+
+	return 0;
+}
+
+```
